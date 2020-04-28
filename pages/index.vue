@@ -1,31 +1,41 @@
 <template>
-  <div class="relative bg-darkest overflow-hidden h-screen homescreen">
+  <div
+    class="relative overflow-hidden h-screen homescreen"
+    :class="light_bg? 'bg-indigo-100': 'bg-darkest'"
+  >
     <div class="relative pt-6 pb-16 md:pb-20 lg:pb-24 xl:pb-32">
       <div class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-20 lg:mt-36">
         <div class="lg:grid lg:grid-cols-12 lg:gap-8">
           <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
             <div
-              class="text-sm font-semibold uppercase tracking-wide text-gray-200 sm:text-base lg:text-sm xl:text-base"
+              class="text-sm font-semibold uppercase tracking-wide sm:text-base lg:text-sm xl:text-base"
+              :class="light_bg? 'text-gray-800': 'text-gray-200'"
             >Coming soon</div>
             <h2
-              class="mt-1 text-4xl tracking-tight leading-10 font-extrabold text-gray-50 sm:leading-none sm:text-6xl lg:text-5xl xl:text-5xl"
+              class="mt-1 text-4xl tracking-tight leading-10 font-extrabold sm:leading-none sm:text-6xl lg:text-5xl xl:text-5xl"
+              :class="light_bg? 'text-darkest': 'text-gray-50'"
             >
               Opeyemi
               <span class="text-light">David</span>
               Idris
             </h2>
-            <p class="mt-3 text-base text-gray-200 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+            <p
+              class="mt-3 text-base sm:mt-5 sm:text-xl lg:text-lg xl:text-xl"
+              :class="light_bg? 'text-gray-600': 'text-gray-200'"
+            >
               Wow I am surprised you found this site. Welcome to my humble abode. As you can see this site is a work in progress and there isn't much to see here. That said if you want to contact me you can reach me
               <nuxt-link to="/contact" class="text-light underline">here.</nuxt-link>
             </p>
             <div class="mt-5 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
               <p
-                class="text-base font-medium text-lightest"
+                class="text-base font-medium"
+                :class="light_bg? 'text-gray-700': 'text-lightest'"
               >I also have a newsletter. Sign up to experience my occasional ramblings.</p>
               <form action="#" method="POST" class="mt-3 sm:flex">
                 <input
                   aria-label="Email"
-                  class="appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 rounded-md placeholder-dark shadow-sm focus:outline-none focus:placeholder-gray-400 focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1"
+                  class="appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 rounded-md shadow-sm focus:outline-none focus:placeholder-gray-400 focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1"
+                  :class="light_bg? 'placeholder-gray-200': 'placeholder-dark'"
                   placeholder="KoolKid@email.com"
                 />
                 <button
@@ -34,6 +44,31 @@
                 >I'm game</button>
               </form>
             </div>
+
+            <!-- On: "bg-indigo-600", Off: "bg-gray-200" -->
+            <span
+              role="checkbox"
+              tabindex="0"
+              aria-checked="false"
+              class="relative inline-block flex-shrink-0 h-6 w-11 mt-2 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none"
+              :class="light_bg? 'bg-indigo-600': 'bg-gray-200'"
+              @click="light_bg=!light_bg"
+            >
+              <!-- On: "translate-x-5", Off: "translate-x-0" -->
+              <span
+                aria-hidden="true"
+                class="translate-x-0 inline-block h-5 w-5 rounded-full bg-white shadow transform transition ease-in-out duration-200"
+                :class="light_bg? 'translate-x-5': 'translate-x-0'"
+              ></span>
+            </span>
+            <p
+              class="text-lg inline-block text-lightest align-bottom align-text-bottom"
+              v-if="!light_bg"
+            >Let there be light???</p>
+            <p
+              class="text-lg inline-block text-gray-700 align-bottom align-text-bottom"
+              v-else
+            >Nah man, brink the dark back.</p>
           </div>
           <div
             class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center"
@@ -256,7 +291,12 @@
 export default {
   components: {},
   methods: {},
-  mounted() {}
+  mounted() {},
+  data() {
+    return {
+      light_bg: false
+    }
+  }
 }
 </script>
 
