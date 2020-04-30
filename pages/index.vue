@@ -31,18 +31,7 @@
                 class="text-base font-medium"
                 :class="light_bg? 'text-gray-700': 'text-lightest'"
               >I also have a newsletter. Sign up to experience my occasional ramblings.</p>
-              <form action="#" method="POST" class="mt-3 sm:flex">
-                <input
-                  aria-label="Email"
-                  class="appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 rounded-md shadow-sm focus:outline-none focus:placeholder-gray-400 focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1"
-                  :class="light_bg? 'placeholder-gray-200': 'placeholder-dark'"
-                  placeholder="KoolKid@email.com"
-                />
-                <button
-                  type="submit"
-                  class="mt-3 w-full px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-light shadow-sm hover:bg-gray-700 focus:outline-none focus:shadow-outline active:bg-lightest transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto"
-                >I'm game</button>
-              </form>
+              <SubscriberForm :light_bg="light_bg" />
             </div>
 
             <!-- On: "bg-indigo-600", Off: "bg-gray-200" -->
@@ -288,8 +277,11 @@
 </template>
 
 <script>
+import SubscriberForm from '../components/SubscriberForm'
 export default {
-  components: {},
+  components: {
+    SubscriberForm
+  },
   methods: {},
   mounted() {},
   data() {

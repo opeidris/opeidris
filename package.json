@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/firebase": "^5.0.7",
     "@tailwindcss/ui": "^0.2.2",
+    "firebase": "^7.14.2",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
