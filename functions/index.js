@@ -39,10 +39,10 @@ exports.sendContactForm = functions.https.onCall((data, context) => {
 	};
 
 	const newData = {
-		sender: { name: 'Opeyemi Idris', email: 'opeyemi@opeidris.com' },
+		sender: { name: 'Opeyemi Idris', email: 'themanhimself@opeidris.com' },
 		to: [ { email: 'opeyemi@opeidris.com' } ],
-		replyTo: { email: data.reply_to, name: data.full_name },
-		textContent: data.message,
+		replyTo: { email: 'opeyemi@opeidris.com', name: data.full_name },
+		textContent: data.message + ' ' + data.p_number + ' ' + data.email,
 		subject: `Email from ${data.full_name}`
 	};
 	async function makePost(input) {
