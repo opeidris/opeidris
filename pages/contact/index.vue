@@ -26,58 +26,7 @@
               class="mt-4 text-lg leading-7 text-lightest sm:mt-3 mb-4"
             >Hey, I would love to work together. What you could call my goal in life is to work on interesting projects with interesting people. If that sounds interesting to you fill out the form below or drop me an email at opeyemi@opeidris.com</p>
           </div>
-          <form action="#" method="POST" class="grid grid-cols-1 row-gap-6">
-            <div>
-              <label for="full_name" class="sr-only">Full name</label>
-              <div class="relative rounded-md shadow-sm">
-                <input
-                  id="full_name"
-                  class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
-                  placeholder="Full name"
-                />
-              </div>
-            </div>
-            <div>
-              <label for="email" class="sr-only">Email</label>
-              <div class="relative rounded-md shadow-sm">
-                <input
-                  id="email"
-                  type="email"
-                  class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
-                  placeholder="Email"
-                />
-              </div>
-            </div>
-            <div>
-              <label for="phone" class="sr-only">Phone</label>
-              <div class="relative rounded-md shadow-sm">
-                <input
-                  id="phone"
-                  class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
-                  placeholder="Phone"
-                />
-              </div>
-            </div>
-            <div>
-              <label for="message" class="sr-only">Message</label>
-              <div class="relative rounded-md shadow-sm">
-                <textarea
-                  id="message"
-                  rows="4"
-                  class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
-                  placeholder="Message"
-                ></textarea>
-              </div>
-            </div>
-            <div class>
-              <span class="inline-flex rounded-md shadow-sm">
-                <button
-                  type="submit"
-                  class="inline-flex justify-center py-3 px-6 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
-                >Submit</button>
-              </span>
-            </div>
-          </form>
+          <ContactForm />
         </div>
       </div>
     </div>
@@ -399,7 +348,12 @@
 </template>
 
 <script>
-export default {}
+import ContactForm from '../../components/ContactForm'
+export default {
+  components: {
+    ContactForm
+  }
+}
 </script>
 
 <style>

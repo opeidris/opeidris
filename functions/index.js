@@ -29,3 +29,27 @@ exports.convertKitSubscriber = functions.https.onCall((data, context) => {
 	}
 	makePost(newData);
 });
+
+exports.sendContactForm = functions.https.onCall((data, context) => {
+	const options = {
+		headers: {
+			'Content-Type': 'application/json',
+			'api-key': process.env.SENDINBLUE_API_KEY
+		}
+	};
+
+	const newData = {
+		sender: { name: 'Opeyemi Idris', email: 'opeyemi@opeidris.com' },
+		to: [ { email: 'opeyemi@opeidris.com' } ],
+		replyTo: { email: data.reply_to, name: data.full_name },
+		textContent: data.message,
+		subject: `Email from ${data.full_name}`
+	};
+	async function makePost(input) {
+		await axios
+			.post('https://api.sendinblue.com/v3/smtp/email', input, options)
+			.then((response) => console.log(response))
+			.catch((error) => console.log(error));
+	}
+	makePost(newData);
+});
