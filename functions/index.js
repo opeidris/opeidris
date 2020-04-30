@@ -1,3 +1,4 @@
+require('dotenv').config();
 const functions = require('firebase-functions');
 const axios = require('axios');
 
@@ -17,7 +18,7 @@ exports.convertKitSubscriber = functions.https.onCall((data, context) => {
 	};
 
 	const newData = {
-		api_key: '5x8ZHYJC6OtfrA-DcguMEw',
+		api_key: process.env.CONVERTKIT_API_KEY,
 		email: email
 	};
 	async function makePost(input) {

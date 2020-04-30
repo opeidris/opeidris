@@ -1,3 +1,4 @@
+require('dotenv').config();
 export default {
 	mode: 'universal',
 	/*
@@ -33,7 +34,8 @@ export default {
   */
 	buildModules: [
 		// Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-		'@nuxtjs/tailwindcss'
+		'@nuxtjs/tailwindcss',
+		'@nuxtjs/dotenv'
 	],
 	/*
   ** Nuxt.js modules
@@ -45,14 +47,14 @@ export default {
 			'@nuxtjs/firebase',
 			{
 				config: {
-					apiKey: 'AIzaSyAZ3N1SU367jd7L1iZWdO1KmJ96TXX89Cc',
-					authDomain: 'ope-idris.firebaseapp.com',
-					databaseURL: 'https://ope-idris.firebaseio.com',
-					projectId: 'ope-idris',
-					storageBucket: 'ope-idris.appspot.com',
-					messagingSenderId: '867764570466',
-					appId: '1:867764570466:web:3d05e017783395838cc43b',
-					measurementId: 'G-NXTDVQHZ30'
+					apiKey: process.env.FIREBASE_API_KEY,
+					authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+					databaseURL: process.env.FIREBASE_DATA_URL,
+					projectId: process.env.FIREBASE_PROJECT_ID,
+					storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+					messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+					appId: process.env.FIREBASE_APP_ID,
+					measurementId: process.env.FIREBASE_MEASUREMENT_ID
 				},
 				services: {
 					functions: true // Just as example. Can be any other service.
