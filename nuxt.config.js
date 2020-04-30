@@ -40,7 +40,25 @@ export default {
   */
 	modules: [
 		// Doc: https://axios.nuxtjs.org/usage
-		'@nuxtjs/axios'
+		'@nuxtjs/axios',
+		[
+			'@nuxtjs/firebase',
+			{
+				config: {
+					apiKey: 'AIzaSyAZ3N1SU367jd7L1iZWdO1KmJ96TXX89Cc',
+					authDomain: 'ope-idris.firebaseapp.com',
+					databaseURL: 'https://ope-idris.firebaseio.com',
+					projectId: 'ope-idris',
+					storageBucket: 'ope-idris.appspot.com',
+					messagingSenderId: '867764570466',
+					appId: '1:867764570466:web:3d05e017783395838cc43b',
+					measurementId: 'G-NXTDVQHZ30'
+				},
+				services: {
+					functions: true // Just as example. Can be any other service.
+				}
+			}
+		]
 	],
 	/*
   ** Axios module configuration
