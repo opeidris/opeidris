@@ -11,7 +11,9 @@ module.exports = {
 				darkest: '#222831',
 				dark: '#393e46',
 				light: '#00adb5',
-				lightest: '#eeeeee'
+				lightest: '#eeeeee',
+				s_brown: '#2E292D',
+				s_light: '#F2F1E9'
 			}
 		}
 	},

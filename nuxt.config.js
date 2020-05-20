@@ -17,7 +17,7 @@ export default {
 				content: process.env.npm_package_description || 'A pretty cool persons personal website'
 			}
 		],
-		link: [ { rel: 'icon', type: 'image/x-icon', href: '/favicon4.png' } ]
+		link: [ { rel: 'icon', type: 'image/x-icon', href: '/identicon2.png' } ]
 	},
 	/*
   ** Customize the progress-bar color
