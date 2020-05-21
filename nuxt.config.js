@@ -62,8 +62,15 @@ export default {
 					functions: true // Just as example. Can be any other service.
 				}
 			}
-		]
+		],
+		'nuxt-facebook-pixel-module'
 	],
+	facebook: {
+		/* module options */
+		track: 'PageView',
+		pixelId: '281946206181371',
+		disabled: false
+	},
 	/*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
