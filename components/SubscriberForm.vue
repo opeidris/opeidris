@@ -97,14 +97,6 @@ export default {
       if (this.validateEmail(email)) {
         this.subscribed = !this.subscribed
         this.error = false
-        const convertKitSubscriber = this.$fireFunc.httpsCallable(
-          'convertKitSubscriber'
-        )
-        convertKitSubscriber(data)
-          .then(result => {
-            console.log(result)
-          })
-          .catch(error => console.log(error))
       } else {
         this.error = true
         email.value = ''
