@@ -18,7 +18,15 @@
         </div>
       </div>
     </div>
-    <form @submit.prevent="formSubmit" class="grid grid-cols-1 row-gap-6">
+    <form
+      @submit="formSubmit"
+      class="grid grid-cols-1 row-gap-6"
+      name="contactus"
+      method="post"
+      netlify
+      netlify-honeypot="bot-field"
+    >
+      <input type="hidden" name="form-name" value="contactus" />
       <div>
         <label for="full_name" class="sr-only">Full name</label>
         <div class="relative rounded-md shadow-sm">
@@ -85,14 +93,6 @@
 export default {
   methods: {
     formSubmit() {
-      const form = document.querySelector('form')
-      const data = {}
-      const formElements = Array.from(form)
-      formElements.map(input => (data[input.name] = input.value))
-      const sendContactForm = this.$fireFunc.httpsCallable('sendContactForm')
-      sendContactForm(data)
-        .then(result => console.log(result))
-        .catch(error => console.log(error))
       this.submitted = true
     }
   },

@@ -57,7 +57,7 @@
             <p
               class="text-lg inline-block text-gray-700 align-bottom align-text-bottom"
               v-else
-            >Nah man, brink the dark back.</p>
+            >Nah man, bring the dark back.</p>
           </div>
           <div
             class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center"
