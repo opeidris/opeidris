@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form @submit.prevent="wasSubmitted" class="mt-3 sm:flex" v-if="!subscribed">
+    <!-- <form @submit.prevent="wasSubmitted" class="mt-3 sm:flex" v-if="!subscribed">
       <input
         aria-label="Email"
         class="appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 rounded-md shadow-sm focus:outline-none focus:placeholder-gray-400 focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1"
@@ -13,7 +13,36 @@
         type="submit"
         class="mt-3 w-full px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-light shadow-sm hover:bg-gray-700 focus:outline-none focus:shadow-outline active:bg-lightest transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto"
       >I'm game</button>
+    </form>-->
+    <form
+      method="post"
+      action="https://sendfox.com/form/1gj6e2/3l6pd0"
+      class="sendfox-form mt-3 sm:flex"
+      id="3l6pd0"
+      data-async="true"
+      data-recaptcha="true"
+      @submit="wasSubmitted"
+      v-if="!subscribed"
+    >
+      <input
+        type="email"
+        placeholder="KoolKid@email.com"
+        name="email"
+        id="email"
+        class="appearance-none block w-full px-3 py-3 border border-gray-300 text-base leading-6 rounded-md shadow-sm focus:outline-none focus:placeholder-gray-400 focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out sm:flex-1"
+        :class="light_bg? 'placeholder-gray-200': 'placeholder-dark'"
+        required
+      />
+      <!-- no botz please -->
+      <div style="position: absolute; left: -5000px;" aria-hidden="true">
+        <input type="text" name="a_password" tabindex="-1" value autocomplete="off" />
+      </div>
+      <button
+        type="submit"
+        class="mt-3 w-full px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-light shadow-sm hover:bg-gray-700 focus:outline-none focus:shadow-outline active:bg-lightest transition duration-150 ease-in-out sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto"
+      >I'm game</button>
     </form>
+
     <div v-else class="rounded-md bg-light p-4">
       <div class="flex">
         <p
@@ -47,6 +76,15 @@ export default {
     return {
       subscribed: false,
       error: false
+    }
+  },
+  head() {
+    return {
+      script: [
+        {
+          src: 'https://sendfox.com/js/form.js'
+        }
+      ]
     }
   },
   methods: {
