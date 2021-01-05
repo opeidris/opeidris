@@ -10,7 +10,7 @@
             <div
               class="text-sm font-semibold uppercase tracking-wide sm:text-base lg:text-sm xl:text-base"
               :class="light_bg? 'text-gray-800': 'text-gray-200'"
-            >Coming soon</div>
+            >Hey, I'm:</div>
             <h2
               class="mt-1 text-4xl tracking-tight leading-10 font-extrabold sm:leading-none sm:text-6xl lg:text-5xl xl:text-5xl"
               :class="light_bg? 'text-darkest': 'text-gray-50'"
@@ -23,15 +23,14 @@
               class="mt-3 text-base sm:mt-5 sm:text-xl lg:text-lg xl:text-xl"
               :class="light_bg? 'text-gray-600': 'text-gray-200'"
             >
-              Wow I am surprised you found this site. Welcome to my humble abode. As you can see this site is a work in progress and there isn't much to see here. That said if you want to contact me you can reach me
+              Welcome to my humble abode. I help shopify store owners increase their revenue with the same amount of traffic. Does that sound good? If so you can reach out to work with me
               <nuxt-link to="/contact" class="text-light underline">here.</nuxt-link>
             </p>
             <div class="mt-5 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
-              <p
-                class="text-base font-medium"
-                :class="light_bg? 'text-gray-700': 'text-lightest'"
-              >I also have a newsletter. Sign up to experience my occasional ramblings.</p>
-              <SubscriberForm :light_bg="light_bg" />
+              <p class="text-base font-medium" :class="light_bg? 'text-gray-700': 'text-lightest'">
+                I also have a
+                <a href="https://nobodyknows.substack.com/" class="text-light underline">newsletter</a>. Sign up to experience my occasional ramblings.
+              </p>
             </div>
 
             <!-- On: "bg-indigo-600", Off: "bg-gray-200" -->
